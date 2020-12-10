@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>CS Forums</title>
+{% endblock %}
+
+{% block body %}
+    <hr>
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary m-1" href="{% url 'createt' %}" role="button" style="background-color: #1A4784; max-width:100%">Create Thread</a>
+    {% else %}
+        <a href="{% url 'account' %}" class="btn btn-primary m-1"style="background-color: #1A4784; max-width: 100%">Create a new account</a>
+    {% endif %}
+    <hr>
+    {% for question in question %}
+    <div class="container-fluid border 1px">
+         <div class="row justify-content-start">
+             <div class="col-lg-2 d-flex justify-content-center">
+                 <svg width="1.5em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill m-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                 </svg><br>
+
+             </div>
+             <div class="col-lg-9 border 1px m-1">
+                 <p>{{ question }}</p>
+             </div>
+         </div>
+         <div class="row justify-content-start">
+             <div class="col-lg-2 d-flex justify-content-center">
+                 <p>User : {{user.username}}</p>
+             </div>
+            <div class="col-lg-9 d-flex justify-content-end">
+                <a class="btn btn-primary m-1" href="{% url 'editt' question.id %}" role="button" style="background-color: #1A4784; max-width:100%">Edit</a>
+                <a class="btn btn-primary m-1" href="{% url 'deletet' question.id %}" role="button" style="background-color: #1A4784; max-width:100%">Delete</a>
+            </div>
+         </div>
+    </div>
+    {% endfor %}
+{% endblock %}

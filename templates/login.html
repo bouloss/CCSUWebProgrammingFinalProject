@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+{% block body %}
+
+    <div class="row justify-content-center p-3">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 >Login</h1>
+                    <form action="{% url 'login' %}" method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
+                    </form>
+                    <hr>
+                    <a href="{% url 'account' %}" class="btn btn-success btn-block btn-lg"style="background-color: #1A4784">Create a new account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container-fluid border 1px">
+     <h1 class="row justify-content-center">Create Your Thread</h1>
+    <form method="post" action="">
+    <div class="row justify-content-center p-2">
+    {% csrf_token %}
+        <div class="p-2">{{ form.as_p }}</div>
+    </div>
+        <div class="row justify-content-center p-2">
+        <a href="{% url 'index' %}" class="btn btn-info m-1"> Go Back</a>
+        <button type="submit" class="btn btn-primary m-1"> Save</button>
+        </div>
+    </form>
+    </div>
+{% endblock %}
