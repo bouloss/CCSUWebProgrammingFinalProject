@@ -1,0 +1,47 @@
+
+#logo{
+    max-width: 70%;
+
+}
+.jumbotron{
+    color: #1A4784;
+    border-bottom: 10px solid #1A4784;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    background-color: aliceblue!important;
+}
+.main{
+    border-left: 5px #1A4784 solid;
+    border-right: 5px #1A4784 solid;
+
+
+}
+.info{
+
+    border: 4px #1A4784 solid;
+    margin-left: 1em;
+    border-radius: 1%;
+}
+.container{
+    padding: 10px;
+
+}
+.card-img-top{
+    width: 150px;
+    height: auto;
+}
+.btn{
+    display: block;
+}
+.type{
+    font-family: 'Titillium Web', sans-serif;
+}
+footer{
+    background-color: #1A4784;
+    color: white;
+}
+.gibd{
+    border: solid 1px;
+}
+
